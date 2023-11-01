@@ -8,7 +8,7 @@ function TradeSection() {
   return (
     <div className="container">
       <div className="lg:flex justify-between lg:mb-48 mb-20">
-        <div>
+        <div data-aos="fade-right">
           <div className="lg:mb-20 mb-12">
             <li className="text-gray-50 lg:text-3xl text-xl font-extrabold lg:max-w-[845px] lg:mb-12 mb-8">
               Trade Anything With NO KYC, NO registration, and NO hassle
@@ -25,13 +25,11 @@ function TradeSection() {
               just by connecting your wallet
             </li>
           </div>
-          <div>
-            <Link href={""}>
-              <Button />
-            </Link>
+          <div data-aos="zoom-in">
+            <Button />
           </div>
         </div>
-        <div className="lg:-mt-24 hidden lg:block">
+        <div data-aos="fade-left" className="lg:-mt-24 hidden lg:block">
           <img src="/picture/UniDoge big icon 3.png" alt="" />
         </div>
       </div>

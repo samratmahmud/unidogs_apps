@@ -22,7 +22,7 @@ function Header() {
     <div className="container">
       <div className="lg:mb-52 mb-20">
         <div className="flex flex-col-reverse lg:flex-row justify-between">
-          <div>
+          <div data-aos="fade-right">
             <div className="mb-5">
               <img src="/picture/UniDoge full 3.svg" alt="" />
             </div>
@@ -46,25 +46,29 @@ function Header() {
                 <img src="/picture/logos_telegram.png" alt="" />
               </Link>
             </div>
-            <div className="lg:text-3xl text-xl font-black text-fuchsia-600 max-w-[758px] lg:mb-28 mb-12">
+            <div
+              data-aos="zoom-in"
+              className="lg:text-3xl text-xl font-black text-fuchsia-600 max-w-[758px] lg:mb-28 mb-12"
+            >
               JOIN THE HYPE OF DOGECHAIN WITH MILLIONS OF USERS ALL AROUND THE
               GLOBE
             </div>
           </div>
-          <div>
+          <div data-aos="fade-left">
             <img src="/picture/UniDoge big icon 3.png" alt="" />
           </div>
         </div>
-        <div className="lg:flex justify-between grid lg:gap-20 gap-10">
+        <div className="flex lg:flex-row flex-col justify-between lg:gap-20 gap-10">
           {infoBlock.map((item, index) => (
             <div
+              data-aos="zoom-in"
               key={index}
               className="py-8 px-6 bg-gray-900 flex flex-col gap-4 items-center rounded-3xl w-full"
             >
               <div>
                 <img className="" src={item.pic} alt="" />
               </div>
-              <div className="text-gray-50 lg:text-2xl text-xl font-extrabold text-center">
+              <div className="text-gray-50 xl:text-2xl text-xl font-extrabold text-center">
                 {item.title}
               </div>
             </div>

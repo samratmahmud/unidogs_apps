@@ -1,6 +1,64 @@
 "use client";
 import Link from "next/link";
+import {features} from "process";
 import React from "react";
+
+const footerLink = [
+  {
+    left: [
+      {
+        name: "Home",
+        href: "/",
+      },
+      {
+        name: "Trade",
+        href: "/",
+      },
+      {
+        name: "Swap",
+        href: "/",
+      },
+      {
+        name: "Farm",
+        href: "/",
+      },
+      {
+        name: "Stake",
+        href: "/",
+      },
+      {
+        name: "FAQ",
+        href: "/",
+      },
+    ],
+    right: [
+      {
+        name: "Privacy Policy and Terms of Service",
+        href: "/",
+      },
+      {
+        name: "UNIDOGE Privacy Policy",
+        href: "/",
+      },
+      {
+        name: "UNIDOGE Biometrics Privacy Policy",
+        href: "/",
+      },
+      {
+        name: "UNIDOGE Financial Privacy Notice",
+        href: "/",
+      },
+      {
+        name: "UNIDOGE Terms of Service",
+        href: "/",
+      },
+      {
+        name: "UNIDOGE Trade Desk Terms of Service",
+        href: "/",
+      },
+    ],
+  },
+];
 
 function Footer() {
   return (
@@ -11,13 +69,18 @@ function Footer() {
         alt=""
       />
       <div className="container">
-        <div className="gap-6 grid lg:grid-cols-2 lg:pb-28 pb-8 text-white/40">
+        <div className="grid lg:grid-cols-2 gap-6 lg:pb-28 pb-8 text-white/40">
           <div className="mb-10 lg:mb-0">
-            <div className="mb-9">
+            <div className="mb-9" data-aos="fade-down">
               <img src="/picture/UniDoge full 4.svg" alt="" />
             </div>
-            <div className="text-sm mb-9">UniDOGE, Trading App </div>
-            <div className="flex flex-row-reverse mb-7 lg:w-4/5 w-full">
+            <div data-aos="fade-up" className="text-sm mb-9">
+              UniDOGE, Trading App{" "}
+            </div>
+            <div
+              data-aos="fade-up"
+              className="flex flex-row-reverse mb-7 lg:w-4/5 w-full"
+            >
               <label
                 htmlFor="search"
                 className="lg:p-5 py-3 px-5 flex-shrink-0 border-[2px] border-fuchsia-600 border-l-0 rounded-r-full"
@@ -36,49 +99,42 @@ function Footer() {
                 autoComplete="off"
               />
             </div>
-            <div className="text-sm">© 2022 UniDOGE</div>
+            <div data-aos="fade-up" className="text-sm">
+              © 2022 UniDOGE
+            </div>
           </div>
-          <div className="flex justify-between gap-6">
-            <div className="flex flex-col gap-7 mb-10 lg:mb-0">
-              <Link className="lg:text-md text-sm font-semibold" href={"/"}>
-                Home
-              </Link>
-              <Link className="lg:text-md text-sm" href={"/"}>
-                Trade
-              </Link>
-              <Link className="lg:text-md text-sm" href={"/"}>
-                Swap{" "}
-              </Link>
-              <Link className="lg:text-md text-sm" href={"/"}>
-                Farm{" "}
-              </Link>
-              <Link className="lg:text-md text-sm" href={"/"}>
-                Stake{" "}
-              </Link>
-              <Link className="lg:text-md text-sm" href={"/"}>
-                FAQ{" "}
-              </Link>
-            </div>
-            <div className="flex flex-col gap-7">
-              <Link className="lg:text-md text-sm font-semibold" href={"/"}>
-                Privacy Policy and Terms of Service
-              </Link>
-              <Link className="lg:text-md text-sm" href={"/"}>
-                UNIDOGE Privacy Policy
-              </Link>
-              <Link className="lg:text-md text-sm" href={"/"}>
-                UNIDOGE Biometrics Privacy Policy{" "}
-              </Link>
-              <Link className="lg:text-md text-sm" href={"/"}>
-                UNIDOGE Financial Privacy Notice{" "}
-              </Link>
-              <Link className="lg:text-md text-sm" href={"/"}>
-                UNIDOGE Terms of Service{" "}
-              </Link>
-              <Link className="lg:text-md text-sm" href={"/"}>
-                UNIDOGE Trade Desk Terms of Service{" "}
-              </Link>
-            </div>
+          <div>
+            {footerLink.map((item, index) => (
+              <div className="flex justify-between gap-6">
+                <div
+                  data-aos="fade-right"
+                  className="flex flex-col gap-7 mb-10 lg:mb-0"
+                >
+                  {item.left.map((items, index) => (
+                    <div key={index}>
+                      <Link
+                        href={items.href}
+                        className="lg:text-md text-sm first:font-semibold"
+                      >
+                        {items.name}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+                <div data-aos="fade-left" className="flex flex-col gap-7">
+                  {item.right.map((feature, index) => (
+                    <div key={index}>
+                      <Link
+                        href={feature.href}
+                        className="lg:text-md text-sm first:font-semibold"
+                      >
+                        {feature.name}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

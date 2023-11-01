@@ -1,12 +1,20 @@
+"use client";
 import Navbar from "@/components/global/Navbar";
-import React from "react";
+import React, {useEffect} from "react";
 import Header from "./home/Header";
 import TradeSection from "./home/TradeSection";
 import Unidoge from "./home/Unidoge";
 import Vision from "./home/Vision";
 import Footer from "./home/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Homepage() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+    });
+  });
   return (
     <div className="bg-black relative z-0 overflow-hidden">
       <div className="container relative -z-10">

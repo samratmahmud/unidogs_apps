@@ -22,6 +22,7 @@ const config: Config = {
     },
     backgroundImage: {
       "100": "linear-gradient(92deg, #E100FF -4.03%, #7F00FF 110.27%)",
+      "200": "linear-gradient(270deg, #E100FF -4.03%, #7F00FF 110.27%)",
     },
     fontSize: {
       xs: ["8px", {lineHeight: "1.32em"}],

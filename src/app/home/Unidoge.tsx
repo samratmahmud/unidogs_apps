@@ -26,10 +26,10 @@ function Unidoge() {
   return (
     <div className="container">
       <div className="lg:flex justify-between gap-16 lg:mb-32 mb-20">
-        <div className="mb-5 animate-pulse">
+        <div className="mb-5 animate-pulse" data-aos="fade-left">
           <img src="/picture/coins 1.svg" alt="" />
         </div>
-        <div>
+        <div data-aos="fade-right">
           <div className="lg:text-4xl text-2xl text-fuchsia-600 font-extrabold mb-5">
             UTILITY OF UNIDOGE TOKEN
           </div>

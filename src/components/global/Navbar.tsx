@@ -34,34 +34,39 @@ function Navbar() {
     <div className="container">
       <div className="flex justify-between gap-12 items-center lg:mb-48 mb-16">
         <div>
-          <button className="py-3">
+          <button data-aos="fade-right" className="py-3">
             <img src="/picture/Group 303.svg" alt="" />
           </button>
         </div>
         <div className="hidden lg:block">
           <div className="lg:flex items-center xl:gap-[75px] gap-12">
             {linkBar.map((item, index) => (
-              <div key={index}>
+              <div
+                data-aos={`${index % 2 === 0 ? "fade-left" : "fade-right"}`}
+                key={index}
+              >
                 <Link
-                  className="text-gray-50 text-base font-medium"
+                  className="text-gray-400 hover:text-gray-50 duration-300 text-base font-medium py-1.5"
                   href={item.url}
                 >
                   {item.name}
                 </Link>
               </div>
             ))}
-            <Link className="flex-shrink-0" href={"/"}>
-              <button className="text-gray-50 text-sm font-medium py-2 px-3.5 border border-fuchsia-500 rounded-3xl bg-100">
-                Launch app
-              </button>
+            <Link
+              href="/"
+              data-aos="fade-left"
+              className="text-gray-50 text-sm font-medium py-2 px-3.5 border border-fuchsia-500 rounded-3xl bg-100 hover:bg-200 duration-500"
+            >
+              Launch app
             </Link>
           </div>
         </div>
         <div className="lg:hidden">
           <div onClick={toggle}>
             <img
-              className="w-12 bg-gray-300 rounded-xl cursor-pointer py-1 px-2"
-              src="/picture/settings-sliders.svg"
+              className="w-14 rounded-xl cursor-pointer py-1 px-2"
+              src="/picture/icons8-menu.svg"
               alt=""
             />
           </div>
