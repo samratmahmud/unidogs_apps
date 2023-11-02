@@ -3,8 +3,9 @@ import Link from "next/link";
 import React from "react";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
+import Button from "../common/Button";
 
-let linkBar = [
+let navLink = [
   {
     name: "Trade",
     url: "/",
@@ -39,27 +40,23 @@ function Navbar() {
           </button>
         </div>
         <div className="hidden lg:block">
-          <div className="lg:flex items-center xl:gap-[75px] gap-12">
-            {linkBar.map((item, index) => (
+          <div className="flex items-center xl:gap-[75px] gap-12">
+            {navLink.map((item, index) => (
               <div
                 data-aos={`${index % 2 === 0 ? "fade-left" : "fade-right"}`}
                 key={index}
               >
                 <Link
-                  className="text-gray-400 hover:text-gray-50 duration-300 text-base font-medium py-1.5"
+                  className="text-gray-50 hover:text-gray-400 duration-300 text-base font-medium py-1.5"
                   href={item.url}
                 >
                   {item.name}
                 </Link>
               </div>
             ))}
-            <Link
-              href="/"
-              data-aos="fade-left"
-              className="text-gray-50 text-sm font-medium py-2 px-3.5 border border-fuchsia-500 rounded-3xl bg-100 hover:bg-200 duration-500"
-            >
-              Launch app
-            </Link>
+            <div data-aos="fade-left">
+              <Button name="Launch app" padding="2" />
+            </div>
           </div>
         </div>
         <div className="lg:hidden">
@@ -80,7 +77,7 @@ function Navbar() {
                     </button>
                   </div>
                   <div className="flex flex-col gap-6 text-center">
-                    {linkBar.map((item, index) => (
+                    {navLink.map((item, index) => (
                       <div key={index}>
                         <Link
                           className="text-gray-50 text-base font-medium"
@@ -97,7 +94,9 @@ function Navbar() {
                     </Link>
                   </div>
                 </div>
-                <div className="text-gray-50">© 2022 UniDOGE</div>
+                <div className="text-gray-50 text-sm text-center">
+                  © 2022 UniDOGE
+                </div>
               </div>
             </Drawer>
           </div>

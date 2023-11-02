@@ -34,9 +34,7 @@ function Header() {
               ON THE BEST DECENTRALISED PLATFORM ON DOGCHAIN
             </div>
             <div className="lg:mb-16 mb-12">
-              <Link href={""}>
-                <Button />
-              </Link>
+              <Button name="Trade Now" />
             </div>
             <div className="flex gap-7 lg:mb-48 mb-16">
               <Link href={"https://twitter.com/"}>

@@ -26,7 +26,7 @@ function TradeSection() {
             </li>
           </div>
           <div data-aos="zoom-in">
-            <Button />
+            <Button name="Trade Now" />
           </div>
         </div>
         <div data-aos="fade-left" className="lg:-mt-24 hidden lg:block">
