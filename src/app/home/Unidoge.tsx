@@ -2,22 +2,18 @@ import React from "react";
 
 let govt = [
   {
-    num: "1.",
     title:
       "Governance of the Unidoge swap platform via voting on new features such as new pools, promotions,...",
   },
   {
-    num: "2.",
     title:
       "Staking for more Unidoge swap token and Staking to get non- uni doge swap tokens in the Farming Pools.",
   },
   {
-    num: "3.",
     title:
       "Farming to get rewards in Pools. Used in Lottery, Team Battle, IFO, NFT products.",
   },
   {
-    num: "4.",
     title: "The main means of payment on the Unidoge swap platform",
   },
 ];
@@ -33,13 +29,13 @@ function Unidoge() {
           <div className="lg:text-4xl text-2xl text-fuchsia-600 font-extrabold mb-5">
             UTILITY OF UNIDOGE TOKEN
           </div>
-          {govt.map((item, index) => (
+          {govt.map(({title}, index) => (
             <div key={index} className="flex gap-3 lg:max-w-[717px]">
               <div className="text-gray-50 lg:text-xl text-lg font-medium">
-                {item.num}
+                {index + 1 + "."}
               </div>
               <div className="text-gray-50 lg:text-xl text-lg font-medium">
-                {item.title}
+                {title}
               </div>
             </div>
           ))}
